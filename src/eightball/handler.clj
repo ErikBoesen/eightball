@@ -30,7 +30,7 @@
   (client/post "https://api.groupme.com/v3/bots/post"
                {:form-params {:text message
                               :bot_id (get-id gid)}
-                :content-type :json}
+                :content-type :json}))
 
 (defroutes app-routes
   (GET "/" [] "Hello! I'm Eight Ball, an omniscient GroupMe bot.")
