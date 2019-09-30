@@ -5,7 +5,7 @@
             [ring.util.response :refer [response content-type]]
             [cheshire.core :as cheshire]
             [compojure.core :refer :all]
-            [clj-http.client :as client])
+            [clj-http.client :as client]))
 
 (defn json [form]
   (-> form
