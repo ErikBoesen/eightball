@@ -7,7 +7,6 @@ from flask import Flask, request
 
 app = Flask(__name__)
 bot = mebots.Bot('eightball', os.environ.get('BOT_TOKEN'))
-website = Website()
 
 PREFIX = '?'
 
