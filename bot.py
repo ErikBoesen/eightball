@@ -19,6 +19,9 @@ OPTIONS = [
 
 def process(message):
     # Prevent self-reply
+    print('{location} | {name}: {text}'.format(location=message['group_id'],
+                                               name=message['name'],
+                                               text=message['text']))
     if message['sender_type'] != 'bot':
         if message['text'].startswith(PREFIX):
             return random.choice(OPTIONS)
