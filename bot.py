@@ -45,7 +45,7 @@ def send(text, group_id):
         'bot_id': bot.instance(group_id).id,
         'text': text,
     }
-    r = requests.post(url, data=message)
+    r = requests.post(url, json=message)
 
 
 if __name__ == '__main__':
