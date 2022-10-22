@@ -17,7 +17,7 @@ OPTIONS = [
 ]
 
 
-def hello(event, context):
+def receive(event, context):
     message = json.loads(event['body'])
 
     group_id = message['group_id']
