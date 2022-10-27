@@ -4,10 +4,8 @@ sys.path.insert(0, 'vendor')
 import os
 import requests
 import random
-import mebots
 import json
 
-bot = mebots.Bot('eightball', os.environ.get('BOT_TOKEN'))
 PREFIX = '?'
 OPTIONS = [
     'It is certain.', 'It is decidedly so.', 'Without a doubt.', 'Yes - definitely.', 'You may rely on it.',
@@ -20,7 +18,7 @@ OPTIONS = [
 def receive(event, context):
     message = json.loads(event['body'])
 
-    group_id = message['group_id']
+    bot_id = message['bot_id']
     response = process(message)
     if response:
         send(response, group_id)
@@ -38,11 +36,11 @@ def process(message):
             return random.choice(OPTIONS)
 
 
-def send(text, group_id):
+def send(text, bot_id):
     url = 'https://api.groupme.com/v3/bots/post'
 
     message = {
-        'bot_id': bot.instance(group_id).id,
+        'bot_id': bot_id,
         'text': text,
     }
     r = requests.post(url, json=message)
