@@ -21,7 +21,7 @@ def receive(event, context):
     bot_id = message['bot_id']
     response = process(message)
     if response:
-        send(response, group_id)
+        send(response, bot_id)
 
     return {
         'statusCode': 200,
