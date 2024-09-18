@@ -11,3 +11,6 @@ functions:
       - http:
           path: receive
           method: post
+
+plugins:
+  - serverless-python-requirements
